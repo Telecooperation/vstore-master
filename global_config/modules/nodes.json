@@ -1,0 +1,10 @@
+[
+    {
+        "url" : "http://the-address-of-the-node",
+        "port" : 50001,
+        "type" : "CLOUDLET",
+        "location" : [49.877684, 8.654256],
+        "bandwidthDown" : 16,
+        "bandwidthUp" : 5
+    }
+]

@@ -1,0 +1,132 @@
+    [
+        {
+            "uuid" : "location_test_1",
+            "name" : "Location Test 1 (Photos)",
+            "dateCreation" : 1531152679,
+            "mimetypes" : ["image/jpeg", "image/png", "image/gif"],
+            "sharingDomain" : 0,
+            "weekdays" : "1,2,3,4,5,6,7",
+            "timeStart" : "10:00",
+            "timeEnd" : "23:00",
+            "context" :
+            {
+                "location" : { "lat" : 49.877684, "lng" : 8.654256 },
+                "radius" : 300
+            },
+            "scoring" : 
+            {
+                "s_location" : 20.0
+            },
+            "decisions" : [
+                {
+                    "isSpecific" : false,
+                    "targetType" : "CLOUDLET",
+                    "maxRadius" : 2
+                }
+
+            ],
+            "isGlobal" : true,
+            "storeMultiple" : false,
+            "replicationFactor" : 1
+        },
+        {
+            "uuid" : "activity_test",
+            "name" : "Activity Rule (Photo)",
+            "dateCreation" : 1531152979,
+            "mimetypes" : ["image/jpeg", "image/png", "image/gif"],
+            "sharingDomain" : 0,
+            "weekdays" : "1,2,3,4,5",
+            "timeStart" : "10:00",
+            "timeEnd" : "23:30",
+            "context" :
+            {
+                "activity" : "STILL"
+            },
+            "scoring" : 
+            {
+                "s_activity" : 20.0
+            },
+            "decisions" : [
+                {
+                    "isSpecific" : false,
+                    "targetType" : "CLOUDLET",
+                    "maxRadius" : 10
+                },
+                {
+                    "isSpecific" : false,
+                    "targetType" : "GATEWAY",
+                    "maxRadius" : 10
+                }
+            ],
+            "isGlobal" : true,
+            "storeMultiple" : true,
+            "replicationFactor" : 2
+        },
+        {
+            "uuid" : "video_walking_rule",
+            "name" : "Video Walking Rule",
+            "dateCreation" : 1531152979,
+            "mimetypes" : ["video/mp4", "video/mov", "video/3gpp"],
+            "sharingDomain" : 0,
+            "weekdays" : "1,2,3,4,5",
+            "timeStart" : "10:00",
+            "timeEnd" : "23:30",
+            "context" :
+            {
+                "activity" : "WALKING"
+            },
+            "scoring" : 
+            {
+                "s_activity" : 20.0
+            },
+            "decisions" : [
+                {
+                    "isSpecific" : false,
+                    "targetType" : "CLOUDLET",
+                    "maxRadius" : 10
+                },
+                {
+                    "isSpecific" : false,
+                    "targetType" : "GATEWAY",
+                    "maxRadius" : 10
+                }
+            ],
+            "isGlobal" : true,
+            "storeMultiple" : true,
+            "replicationFactor" : 2
+        },
+        {
+            "uuid" : "poi_test_rule",
+            "name" : "POI Test Rule",
+            "dateCreation" : 1531152979,
+            "mimetypes" : ["video/mp4", "video/mov", "video/3gpp"],
+            "sharingDomain" : 0,
+            "weekdays" : "1,2,3,4,5",
+            "timeStart" : "10:00",
+            "timeEnd" : "23:30",
+            "context" :
+            {
+                "placetypes" : [ "POI" ]
+            },
+            "scoring" : 
+            {
+                "s_places" : 10.0
+            },
+            "decisions" : [
+                {
+                    "isSpecific" : false,
+                    "targetType" : "GATEWAY",
+                    "maxRadius" : 10
+                }
+            ],
+            "isGlobal" : false,
+            "storeMultiple" : false,
+            "replicationFactor" : 1
+        },
+        {
+            "//BELOW, ONLY PRIVATE RULES FOLLOW" : ""
+        },
+        {
+            "//BELOW, RULE DELETIONS FOLLOW" : ""
+        }
+    ]
