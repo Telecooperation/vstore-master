@@ -1,9 +1,10 @@
 # vstore-master - Master node for vStore
-
-The master node serves configuration to the framework clients. This includes
+The master node serves configuration to the [vStore](https://github.com/Telecooperation/vstore-framework) framework's clients. This includes
 * Global decision rules
 * A list of storage nodes
 * A global key/value lookup service, which replies to requests of file identifiers with a json array of storage node identifiers, on which the file is stored (based on the in-memory database [lmdb](https://symas.com/lmdb/)).
+
+Please refer to the framework's [main repository](https://github.com/Telecooperation/vstore-framework) and [Wiki](https://github.com/Telecooperation/vstore-framework/wiki) for further documentation about its use. 
 
 ## Installation
 
