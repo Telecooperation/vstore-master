@@ -22,7 +22,7 @@ var config_handler = {
         var file_name = module_name+".json";
         var file_path = path.resolve(__dirname, "modules", file_name);
         if(!fs.existsSync(file_path)) { return null; }
-        fs.rename(file_path, file_path + ".done");
+        fs.rename(file_path, file_path + ".done", function(err) {if (err) console.log("Error renaming file: " + err);});
     },
 
     readConfig: function() {
