@@ -8,13 +8,13 @@ var NodeInfoSchema = Schema(
     uuid: String,
     url: String,
     port: Number,
-    node_type: String,
-    loc: {
+    type: String,
+    location: {
         type: [Number], // [<longitude>, <latitude>]
         index: '2dsphere' // create the 2d geospatial index
     },
-    upstream_speed: Number,
-    downstream_speed: Number,
+    bandwidthDown: Number,
+    bandwidthUp: Number,
     latency: Number
 });
 

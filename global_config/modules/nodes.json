@@ -2,9 +2,17 @@
     {
         "url" : "http://the-address-of-the-node",
         "port" : 50001,
-        "node_type" : "PRIVATE_NODE",
-        "loc" : [49.877684, 8.654256],
-        "downstream_speed" : 16,
-        "upstream_speed" : 5
+        "type" : "PRIVATE_NODE",
+        "location" : [49.877684, 8.654256],
+        "bandwidthDown" : 16,
+        "bandwidthUp" : 5
+    },
+    {
+        "url" : "http://the-address-of-the-node",
+        "port" : 50002,
+        "type" : "CLOUDLET",
+        "location" : [49.861260, 8.680836],
+        "bandwidthDown" : 16,
+        "bandwidthUp" : 5
     }
 ]
