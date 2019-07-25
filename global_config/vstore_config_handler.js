@@ -50,8 +50,8 @@ var config_handler = {
         nodes.forEach(function(node) {            
             NodeInfoModel.find(node, function(err, result) 
             {
-                if(err || result) { return; }
-                if(!result) {
+                if(err || result.length > 0) { return; }
+                if(result.length == 0) {
                     new NodeInfoModel(node).save(function(err) {});
                 }
             });
