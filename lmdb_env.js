@@ -11,6 +11,7 @@ if (!fs.existsSync(env_dir)) {
 var env = new lmdb.Env();
 env.open({
     path: __dirname + "/lmdb_db",
+    mapSize: 2*1024*1024*1024,
     maxDbs: 3
 });
 
