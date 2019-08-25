@@ -303,6 +303,49 @@ router.get('/nodes', function(req, res, next) {
     });
 });
 
+// route for removing a single node from a file-node mapping
+router.delete('/remove_node', function(req, res, next) {
+    if (!req.body || !req.body.file_id || !req.body.node_id) {
+        console.log("["+getDateTime()+"] Invalid DELETE Node request (File: " + req.body.file_id + ", Node: " + req.body.node_id + ")");
+        var err = new Error("Invalid request");
+        err.status = 400;
+        next(err);
+        return;
+    }
+
+    // get existing mapping from DB, remove respective node and save it back
+    var existingMapping = readKVJsonFromDb(req.body.file_id);
+
+//    console.log("BEFORE: " + JSON.stringify(existingMapping));
+
+    if (existingMapping != undefined) {
+        for (var i = 0; i < existingMapping.nodeEntries.length; i++) {
+            if (existingMapping.nodeEntries[i] === req.body.node_id) {
+                existingMapping.nodeEntries.splice(i, 1);   // removes array entry at that index
+                break;
+            }
+        }
+    }
+
+//    console.log("AFTER: " + JSON.stringify(existingMapping));
+    
+    var success = insertKVIntoDb(req.body.file_id, existingMapping);
+    if (success) {
+        res.status(200);
+        res.json(makeJsonPayload(
+            "success",
+            "Removed node from mapping",
+            {nodes: existingMapping.nodeEntries}
+        ));
+    } else {
+        var error = new Error("Removing node from mapping failed");
+        error.status = 500;
+        next(error);
+        return;
+    }
+
+});
+
 //// 404 routes
 
 // Catch 404 and forward to error handler
