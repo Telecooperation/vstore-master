@@ -316,8 +316,6 @@ router.delete('/remove_node', function(req, res, next) {
     // get existing mapping from DB, remove respective node and save it back
     var existingMapping = readKVJsonFromDb(req.body.file_id);
 
-//    console.log("BEFORE: " + JSON.stringify(existingMapping));
-
     if (existingMapping != undefined) {
         for (var i = 0; i < existingMapping.nodeEntries.length; i++) {
             if (existingMapping.nodeEntries[i] === req.body.node_id) {
@@ -326,8 +324,6 @@ router.delete('/remove_node', function(req, res, next) {
             }
         }
     }
-
-//    console.log("AFTER: " + JSON.stringify(existingMapping));
     
     var success = insertKVIntoDb(req.body.file_id, existingMapping);
     if (success) {
