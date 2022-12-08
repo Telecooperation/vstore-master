@@ -14,7 +14,7 @@
     "cors": "^2.8.4",
     "debug": "~2.6.9",
     "dotenv": "^4.0.0",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "morgan": "~1.9.0",
     "node-lmdb": "0.6.0",
     "parse-error": "^0.2.0",
